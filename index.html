@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+<title>Rahul's Monster Ride</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="ui">
+    <div id="startScreen" class="overlay">
+      <h1>Rahul's Monster Ride</h1>
+      <p>Created by Rahul Singh</p>
+      <button id="playBtn" class="big">PLAY</button>
+      <small>Use ▶ / touch right to accelerate, touch left to rotate, tap screen or press Space to jump</small>
+    </div>
+
+    <canvas id="gameCanvas"></canvas>
+
+    <div class="controls">
+      <button id="leftBtn">⟲</button>
+      <button id="rightBtn">⟳</button>
+    </div>
+
+    <div id="hud">
+      <div id="score">Distance: 0 m</div>
+      <div id="credit">Rahul's Monster Ride</div>
+    </div>
+
+    <div id="gameOver" class="overlay" style="display:none;">
+      <h2>Game Over</h2>
+      <p id="finalScore">Distance: 0 m</p>
+      <button id="restartBtn" class="big">Restart</button>
+    </div>
+  </div>
+
+<script src="game.js"></script>
+</body>
+</html>
