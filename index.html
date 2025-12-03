@@ -3,21 +3,22 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Rahul's Monster Ride — 3D</title>
+<title>Rahul's Monster Ride — Realistic</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div id="ui">
     <div id="startScreen" class="overlay">
       <h1>Rahul's Monster Ride</h1>
-      <p>3D Racer — Created by Rahul Singh</p>
+      <p>3D Racer — Improved Real Feel</p>
       <button id="playBtn" class="big">PLAY</button>
-      <p class="hint">Arrow keys / A D = steer • Up = accelerate • Space = brake/jump</p>
+      <p class="hint">W/A/S/D or Arrow Keys — Space = Brake / Nitro (Hold)</p>
     </div>
 
     <div id="hud">
       <div id="score">Distance: 0 m</div>
       <div id="speed">Speed: 0 km/h</div>
+      <div id="nitro">Nitro: 100%</div>
       <div id="credit">Rahul's Monster Ride</div>
     </div>
 
@@ -37,8 +38,9 @@
     </div>
   </div>
 
+<!-- three.js -->
 <script src="https://unpkg.com/three@0.150.1/build/three.min.js"></script>
+<!-- simple noise for road deformation (small function inside JS) -->
 <script src="game.js"></script>
 </body>
 </html>
-
