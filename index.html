@@ -2,29 +2,32 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
-<title>Rahul's Monster Ride</title>
-<link rel="stylesheet" href="style.css" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Rahul's Monster Ride — 3D</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div id="ui">
     <div id="startScreen" class="overlay">
       <h1>Rahul's Monster Ride</h1>
-      <p>Created by Rahul Singh</p>
+      <p>3D Racer — Created by Rahul Singh</p>
       <button id="playBtn" class="big">PLAY</button>
-      <small>Use ▶ / touch right to accelerate, touch left to rotate, tap screen or press Space to jump</small>
+      <p class="hint">Arrow keys / A D = steer • Up = accelerate • Space = brake/jump</p>
+    </div>
+
+    <div id="hud">
+      <div id="score">Distance: 0 m</div>
+      <div id="speed">Speed: 0 km/h</div>
+      <div id="credit">Rahul's Monster Ride</div>
     </div>
 
     <canvas id="gameCanvas"></canvas>
 
     <div class="controls">
+      <button id="accelBtn">▲</button>
       <button id="leftBtn">⟲</button>
       <button id="rightBtn">⟳</button>
-    </div>
-
-    <div id="hud">
-      <div id="score">Distance: 0 m</div>
-      <div id="credit">Rahul's Monster Ride</div>
+      <button id="brakeBtn">▼</button>
     </div>
 
     <div id="gameOver" class="overlay" style="display:none;">
@@ -34,6 +37,8 @@
     </div>
   </div>
 
+<script src="https://unpkg.com/three@0.150.1/build/three.min.js"></script>
 <script src="game.js"></script>
 </body>
 </html>
+
