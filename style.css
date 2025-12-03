@@ -1,62 +1,38 @@
+/* Simple responsive UI */
 :root{
-  --bg:#071028;
-  --accent:#ffd400;
+  --bg:#0b0f14; --panel:#0f1720; --accent:#22c55e; --muted:#9aa6b2;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%}
-body{
-  font-family:Inter, system-ui, Roboto, Arial;
-  background:linear-gradient(#071028,#0b1220);
-  color:#fff;
-  text-align:center;
-  -webkit-font-smoothing:antialiased;
+html,body{height:100%;background:linear-gradient(180deg,#071028,#071020);font-family:Inter,Arial;color:#fff}
+#ui{min-height:100vh;display:flex;flex-direction:column;align-items:center;gap:12px;padding:16px}
+
+/* center panels */
+.panel{background:linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.35));padding:16px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);width:90%;max-width:520px;text-align:center}
+.row{display:flex;gap:12px;justify-content:center;align-items:center;margin:8px 0}
+.btn{background:var(--accent);color:#07201b;border:none;padding:10px 14px;border-radius:8px;font-weight:700;cursor:pointer}
+.btn.danger{background:#ff5c5c;color:#111}
+
+/* canvas */
+canvas#game{width:100%;max-width:720px;height:72vh;background:#000;border-radius:10px;border:6px solid rgba(255,255,255,0.02);display:block}
+
+/* HUD and small controls */
+#hud{position:fixed;left:18px;top:12px;display:flex;gap:12px;z-index:40}
+#hud>div{background:rgba(0,0,0,0.45);padding:8px 12px;border-radius:8px;font-weight:700}
+
+/* touch controls bottom */
+.controls{position:fixed;bottom:20px;left:0;right:0;display:flex;justify-content:center;gap:12px;z-index:40}
+.ctrl{padding:12px 14px;border-radius:10px;border:none;background:linear-gradient(#ffd400,#f0c000);color:#111;font-weight:800;cursor:pointer}
+
+/* small pause button */
+.smallBtn{cursor:pointer;background:rgba(255,255,255,0.06);padding:6px 8px;border-radius:6px;font-weight:700}
+
+/* leaderboard list */
+#leaderList{list-style:none;text-align:left;padding-left:12px}
+#leaderList li{padding:6px 0;border-bottom:1px dashed rgba(255,255,255,0.03);display:flex;justify-content:space-between}
+
+/* responsive */
+@media(max-width:520px){
+  canvas#game{height:58vh}
+  .panel{width:96%}
+  #hud{left:8px;top:8px}
 }
-#ui{position:relative;min-height:100vh;overflow:hidden}
-
-canvas#gameCanvas{
-  display:block;
-  width:100vw;
-  height:72vh;
-  margin:26px auto 0;
-  border-radius:10px;
-  background:linear-gradient(#87cefa,#bfefff 60%);
-  box-shadow:0 8px 40px rgba(0,0,0,0.7);
-}
-
-/* overlays / HUD */
-.overlay{
-  position:absolute;
-  left:50%;
-  top:18%;
-  transform:translate(-50%,-18%);
-  background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.45));
-  padding:18px 20px;
-  border-radius:12px;
-  width:92%;
-  max-width:540px;
-  backdrop-filter: blur(4px);
-  border: 1px solid rgba(255,255,255,0.04);
-}
-.overlay h1{color:var(--accent);font-size:30px;margin-bottom:8px}
-.overlay p{color:#ddd;margin-bottom:12px}
-.big{font-size:18px;padding:10px 14px;background:var(--accent);color:#111;border:none;border-radius:8px;cursor:pointer}
-
-#hud{position:absolute;left:12px;top:10px;display:flex;gap:10px;align-items:center;z-index:10}
-#hud>div{background:rgba(0,0,0,0.45);padding:8px 12px;border-radius:8px;font-weight:600}
-
-/* controls */
-.controls{display:flex;justify-content:center;gap:12px;margin:14px 0 28px}
-.controls button{
-  font-size:20px;padding:12px 16px;border-radius:12px;border:none;background:var(--accent);color:#111;cursor:pointer;touch-action:manipulation;
-}
-
-/* game over position */
-#gameOver{top:42%}
-
-/* mobile adjustments */
-@media (max-width:520px){
-  canvas#gameCanvas{height:62vh;margin-top:10px}
-  .controls button{padding:10px 12px;font-size:18px}
-  .overlay{top:28%}
-}
-
